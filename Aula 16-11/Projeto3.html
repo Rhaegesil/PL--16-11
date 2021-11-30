@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>Exibição de caracteres</title>
+    <script language="javascript">
+        function Exibição()
+        {
+            var palavra;
+            palavra = document.dados.palavra.value;
+            var qtdVogais, qtdConsoantes, qtdDigitos, qtdOutros;
+            qtdConsoantes = 0;
+            qtdConsoantes = parseFloat(qtdConsoantes);
+            qtdVogais = 0;
+            qtdVogais = parseFloat(qtdVogais);
+            qtdDigitos = 0;
+            qtdDigitos = parseFloat(qtdDigitos);
+            qtdOutros = 0;
+            qtdOutros = parseFloat(qtdOutros);
+            palavra = palavra.trim();
+
+            for(ii = 0; ii < palavra.length; ii++)
+            {
+                if(palavra.charAt(ii) == "a" || palavra.charAt(ii) == "e" || palavra.charAt(ii) == "i"
+                    || palavra.charAt(ii) == "o" || palavra.charAt(ii) == "u")
+                {
+                    qtdVogais++;
+                }
+                else if(palavra.charAt(ii) == "b" || palavra.charAt(ii) == "c" || palavra.charAt(ii) == "d"
+                    || palavra.charAt(ii) == "f" || palavra.charAt(ii) == "g" || palavra.charAt(ii) == "h"
+                    || palavra.charAt(ii) == "j" || palavra.charAt(ii) == "k"
+                    || palavra.charAt(ii) == "l" || palavra.charAt(ii) == "m" || palavra.charAt(ii) == "n"
+                    || palavra.charAt(ii) == "p" || palavra.charAt(ii) == "q"
+                    || palavra.charAt(ii) == "r" || palavra.charAt(ii) == "s" 
+                    || palavra.charAt(ii) == "t"
+                    || palavra.charAt(ii) == "v" || palavra.charAt(ii) == "w"
+                    || palavra.charAt(ii) == "x" || palavra.charAt(ii) == "y" || palavra.charAt(ii) == "z")
+                    {
+                        qtdConsoantes++;
+                    }
+                else if(palavra.charAt(ii) == "0" || palavra.charAt(ii) == "1" || palavra.charAt(ii) == "2"
+                    || palavra.charAt(ii) == "3" || palavra.charAt(ii) == "4" || palavra.charAt(ii) == "5"
+                    || palavra.charAt(ii) == "6" || palavra.charAt(ii) == "7"
+                    || palavra.charAt(ii) == "8" || palavra.charAt(ii) == "9")
+                {
+                    qtdDigitos++;
+                }
+                else
+                {
+                    qtdOutros++;
+                }
+            }
+
+            document.write("<table border=3>");
+            document.write("<tr><td>Qtd. de vogais</td><td>" + qtdVogais + "</td></tr>"); 
+            document.write("<tr><td>Qtd. de consoantes</td><td>" + qtdConsoantes + "</td></tr>");
+            document.write("<tr><td>Qtd. de dígitos</td><td>" + qtdDigitos + "</td></tr>");
+            document.write("<tr><td>Qtd. de outros</td><td>" + qtdOutros + "</td></tr>");                        
+            document.write("</table>");
+
+
+        }
+    </script>
+</head>
+<body>
+    <form name="dados">
+    <font size="5">Informe sua palavra ou texto aqui:</font><br>
+    <input type="text" name="palavra"><br>
+    <input type="button" value="Enter" onclick="Exibição();">
+    </form>        
+</body>
+</html>

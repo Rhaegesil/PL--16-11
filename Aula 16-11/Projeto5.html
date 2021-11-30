@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Catálogo telefônico</title>
+    <script language="javascript">
+        function Catalogo()
+        {
+        var palavra;
+        palavra = document.dados.palavra.value;
+        palavra = palavra.trim();
+        ultimoNome = palavra.lastIndexOf(" ") + 1;
+        document.write(palavra.substring(ultimoNome, palavra.length) + ", " + palavra.substring(0, palavra.lastIndexOf(" ")));
+    }    
+    </script>
+</head>
+<body>
+    <form name="dados">
+    <font size="5">Informe seu nome completo aqui:</font>
+    <br>
+    <input type="text" name="palavra"><br>
+    <input type="button" value="Enter" onclick="Catalogo();">
+    </form>     
+</body>
+</html>

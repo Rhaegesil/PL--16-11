@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palavra: Coluna e Linha</title>
+    <script lenguage="javascript">
+        function tabela()
+        {
+            var palavra;
+            palavra = document.dados.palavra.value;
+            palavra = palavra.trim();
+            document.write("<table border=2>");
+                document.write("<tr>");
+                for(ii = 0; ii < palavra.length; ii++){
+                    document.write("<td>");
+                    document.write(palavra.charAt(ii));
+                    document.write("</td>");
+                }
+                document.write("</tr>");
+            document.write("</table>");
+
+            document.write("<table border=2>");
+                for(ii = 0; ii < palavra.length; ii++){
+                    document.write("<tr>");                    
+                    document.write("<td>");
+                    document.write(palavra.charAt(ii));
+                    document.write("</td>");
+                    document.write("</tr>");
+                }
+            document.write("</table>");
+        }
+    </script>
+</head>
+<body>
+    <form name="dados">
+    <font size="5">Informe sua palavra ou texto aqui:</font>
+    <br>
+    <input type="text" name="palavra"><br>
+    <input type="button" value="Enter" onclick="tabela();">
+    </form>
+</body>
+</html>

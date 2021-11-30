@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Referência Bibliográfica</title>
+    <script language="javascript">
+    function RefBibliografica()
+    {
+    var palavra, ultimoNome, primeiroNome;
+    palavra = document.dados.palavra.value;
+    palavra = palavra.trim();
+    ultimoNome = palavra.lastIndexOf(" ") + 1;
+    primeiroNome = palavra.indexOf(" ") + 1;
+    document.write("<b>" + palavra.substring(ultimoNome, palavra.length).toUpperCase() + "</b>, " + palavra.substring(0, primeiroNome));
+    var vetor = palavra.split(' ');
+    for(ii = 1; ii < vetor.length - 1; ii++)
+    {
+        var outrosNomes = vetor[ii];
+        outrosNomes = outrosNomes.split('');
+        document.write(" " + outrosNomes[0] + ".");
+    }
+    }    
+    </script>
+</head>
+<body>
+    <form name="dados">
+    <font size="5">Informe seu nome completo aqui:</font>
+    <br>
+    <input type="text" name="palavra"><br>
+    <input type="button" value="Enter" onclick="RefBibliografica();">
+    </form>   
+</body>
+</html>

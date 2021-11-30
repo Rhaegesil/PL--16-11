@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Caracter e Quantidade</title>
+    <script lenguage="javascript">
+        function Apresentação()
+        {
+            var caracter;
+            var numero;
+            numero = document.dados.numero.value;
+            caracter = document.dados.caracter.value;
+            caracter = caracter.trim();
+            
+            document.write("<table border=3>");
+            document.write("<tr>");
+            document.write("<td>");
+            for(ii = 0; ii < numero; ii++)
+            {
+                document.write(caracter + " ");               
+            }
+            document.write("</td>"); 
+            document.write("</tr>");
+
+
+        }
+    </script>
+</head>
+<body>
+    <form name="dados">
+        <font size="5">Caracter: </font>
+        <input type="text" name="caracter"><br>
+        <font size="5">Número: </font>
+        <input type="number" name="numero"><br>
+        <input type="button" value="Enter" onclick="Apresentação();">
+    </form>
+</body>
+</html>

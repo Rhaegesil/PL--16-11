@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Identificar palíndromo</title>
+    <script language="javascript">
+        function palindromo()
+        {
+        var palavra, tamanhoFinal, contador;
+        palavra = document.dados.palavra.value;
+        palavra = palavra.trim();
+        palavra = palavra.replace(" ","");
+        tamanhoFinal = palavra.length;
+        contador = 0;
+        for(ii = 0; ii < palavra.length; ii++){
+            for(aa = palavra.length; aa > 0; aa--){
+                if(palavra.charAt(ii) == palavra.charAt(aa))
+                {
+                    contador++;
+                }
+            }
+        }
+        if(contador == palavra.length)
+            document.write("Isso é um palíndromo!");
+        else
+            document.write("Isso não é um palíndromo");
+    }    
+    </script>
+</head>
+<body>
+    <form name="dados">
+    PS: só consegui fazer com "ana", "ovo" ou palavras simples, porém não consegui com frases ou com palavras como "anna" :(<br>
+    <font size="5">Informe sua palavra aqui:</font>
+    <br>
+    <input type="text" name="palavra"><br>
+    <input type="button" value="Enter" onclick="Palindromo();">
+    </form>   
+</body>
+</html>
